@@ -1,11 +1,13 @@
 .header{
     width: 100%;
-    background: red;
+    background: FAFAFB;
+    box-shadow: 2px 2px 3px #DCDEE5;
 }
 
 .nav{
     width: 90%;
     margin: 0 auto;
+    padding: 10px 0;
 }
 
 .linksWrapper{
@@ -14,10 +16,12 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin: 0;
 }
 
 .linksWrapper > li > a{
 text-decoration: none;
 cursor: pointer;
-color: black;
+color: #202325;
+font-size: 14px;
 }

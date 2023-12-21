@@ -30,8 +30,24 @@ export const getArticle = async (req, res) => {
         const Article = await ArticleModel.findByPk(id,{include: [AuthorModel]});
 
 
+if(Article){
+        res.status(200).json({ "data":Article });}
+        else{
+            res.status(404).json({ "message":"Article not found" });   
+        }
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+}
+export const getAllArticle = async (req, res) => {
 
-        res.status(200).json({ "data":Article });
+    try {
+
+        const Articles = await ArticleModel.findAll({include: [AuthorModel]});
+
+
+
+        res.status(200).json({ "data":Articles });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }

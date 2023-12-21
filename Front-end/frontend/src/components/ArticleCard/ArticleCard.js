@@ -1,16 +1,16 @@
 import Styles from './ArticleCard.module.css'
 import { Link } from 'react-router-dom'
-const Article = ({cardID}) => {
+const Article = ({data}) => {
     return (
-  <Link to={`/dashboard/${cardID}`}>
+  <Link to={`/article/${data.id}`}>
         <article className={Styles.articleCard}>
-            <img src='https://t4.ftcdn.net/jpg/02/99/62/11/360_F_299621124_vutDKbNwRJG6poJRQQIMYfsc4tJCTO5E.jpg' alt="whatever" />
+            <img src={data.imageURL} alt={data.title} />
             <div className={Styles.cardWrapper}>
                 <div className={Styles.cardDetails}>
-                    <p>James Arthur</p>
-                    <span>10/12/2023</span>
+                    <p>{`${data.Author.firstName} ${data.Author.lastName}`}</p>
+                    <span>{data.createdAt.split("T")[0]}</span>
                 </div>
-                <p>How To Setup Backend</p>
+                <p>{data.body}</p>
             </div>
 
         </article>
