@@ -2,6 +2,7 @@ import { Sequelize } from "sequelize";
 import dotenv from 'dotenv'
 import Author from './author.js'
 import Article from './article.js'
+import User from './user.js'
 
 dotenv.config()
 const sequelize = new Sequelize(
@@ -17,13 +18,15 @@ const sequelize = new Sequelize(
 
 const AuthorModel = Author(sequelize, Sequelize);
 const ArticleModel = Article(sequelize, Sequelize);
+const UserModel = User(sequelize, Sequelize);
 
 
 const db = {
     sequelize,
     Sequelize,
     AuthorModel,
-    ArticleModel
+    ArticleModel,
+    UserModel
   
   };
 
